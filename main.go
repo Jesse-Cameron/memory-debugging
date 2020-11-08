@@ -48,5 +48,13 @@ func main() {
 		_, _ = w.Write([]byte("Gee whiz. I hope my app isn't leaky 🙏\n"))
 	})
 
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	go func() {
+		log.Fatal(http.ListenAndServe(":8080", nil))
+	}()
+
+	// leaky async function
+	var wg sync.WaitGroup
+	wg.Add(1)
+	go leakyFunction(wg)
+	wg.Wait()
 }
