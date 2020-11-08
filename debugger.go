@@ -13,7 +13,7 @@ func PrintMemUsage() {
 	// For info on each, see: https://golang.org/pkg/runtime/#MemStats
 	fmt.Printf("Alloc = %v MiB", bToMb(m.Alloc))
 	fmt.Printf("\tTotalAlloc = %v MiB", bToMb(m.TotalAlloc))
-	fmt.Printf("\tSys = %v MiB", bToMb(m.Sys))
+	fmt.Printf("\tHeapSys = %v MiB", bToMb(m.HeapSys))
 	fmt.Printf("\tNumGC = %v\n", m.NumGC)
 }
 
