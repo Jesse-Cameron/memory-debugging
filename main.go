@@ -27,7 +27,7 @@ func (rt *RequestTracker) doWork() {
 }
 
 func main() {
-	fmt.Printf("Starting Server on port :%s\n", "8080")
+	fmt.Printf("Starting Server on port :%s 🎉🎉🎉\n", "8080")
 
 	http.HandleFunc("/work", func(w http.ResponseWriter, r *http.Request) {
 		requests.doWork()
